@@ -3,7 +3,8 @@ from random import randint
 INF = "Infantry"
 TNK = "Tank"
 ART = "Artillery"
-# Testing Git
+CAV = "Cavalry"
+STR = "Stormtruppen"
 
 
 class Land_Unit:
@@ -36,6 +37,18 @@ def contains(army, unit_name):
     for unit in army:
         if unit.name == unit_name:
             return True
+
+
+def revert_unit_values(army):
+    for supported_unit in army:
+        if supported_unit.name == INF:
+            supported_unit.attack == 1
+        if supported_unit.name == CAV:
+            supported_unit.attack == 1
+        if supported_unit.name == STR:
+            supported_unit.attack == 2
+
+        
 
 
 def remove_from_army(army, unit_name):
