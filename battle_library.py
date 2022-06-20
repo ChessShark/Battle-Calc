@@ -48,8 +48,6 @@ def revert_unit_values(army):
         if supported_unit.name == STR:
             supported_unit.attack == 2
 
-        
-
 
 def remove_from_army(army, unit_name):
     for unit in army:
@@ -122,6 +120,7 @@ def battle(armies):
         defense_hits = defense_roll(armies.defending_army)
         armies.attacking_army = remove_attacking_units(defense_hits, armies.attacking_army)
         armies.defending_army = remove_attacking_units(attack_hits, armies.defending_army)
+        revert_unit_values(armies.attacking_army)
 
 
 def pre_battle_print(attacking_army, defending_army):
